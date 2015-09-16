@@ -16,9 +16,9 @@ def process_message(data):
         text = None
 
     LOGGER.debug(data)
-    if 'subtype' in data and (data['subtype'] == 'bot_message' or data['user'] == 'U02NTS39B'):
+    if 'subtype' in data and 'user' in data and (data['subtype'] == 'bot_message' or data['user'] == 'U02NTS39B'):
         LOGGER.info('I hate bots!')
-        outputs.append([ data['channel'], '_growls_'])
+        outputs.append([ data['channel'], 'Grrrrr'])
     if text.startswith('pets') and 'bug' in text:
         LOGGER.info('Command received: %s', text)
         outputs.append([ data['channel'], '_wags tail_'])
