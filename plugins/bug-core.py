@@ -13,7 +13,7 @@ def process_message(data):
     if 'text' in data:
         text = data['text'].lower()
     else:
-        text = None
+        text = ""
 
     LOGGER.debug(data)
     if 'subtype' in data and 'user' in data and (data['subtype'] == 'bot_message' or data['user'] == 'U02NTS39B'):
